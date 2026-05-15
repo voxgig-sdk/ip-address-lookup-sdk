@@ -1,0 +1,28 @@
+# BasicGetIpAddressFlow
+
+main: kit: flow: BasicGetIpAddressFlow:
+{
+  entity: "get_ip_address",
+  kind: "basic",
+  name: "BasicGetIpAddressFlow",
+  step: [
+    {
+      input: {
+        ref: "get_ip_address_ref01",
+        srcdatavar: "get_ip_address_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-get_ip_address_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGetIpAddressFlow"
+}

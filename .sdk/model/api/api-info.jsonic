@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://ipty.org"
+      }
+      description: "This API provides the public IP address of a user along with their network information. It allows users to easily find and share their IP address using a simple HTTP request."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://ipty.org"
+        }
+      ]
+      title: "IP Address Lookup"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

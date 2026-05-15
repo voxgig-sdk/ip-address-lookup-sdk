@@ -1,0 +1,110 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "IP Address Lookup",
+    "description": "This API provides the public IP address of a user along with their network information. It allows users to easily find and share their IP address using a simple HTTP request.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://ipty.org"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://ipty.org",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get public IP address",
+        "description": "Returns the public IP address of the requesting client along with network information",
+        "operationId": "getIpAddress",
+        "tags": [
+          "IP Lookup"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with IP address and network information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ip": {
+                      "type": "string",
+                      "description": "The public IP address of the client",
+                      "example": "203.0.113.42"
+                    },
+                    "network": {
+                      "type": "object",
+                      "description": "Network information associated with the IP address",
+                      "properties": {
+                        "asn": {
+                          "type": "string",
+                          "description": "Autonomous System Number",
+                          "example": "AS15169"
+                        },
+                        "organization": {
+                          "type": "string",
+                          "description": "Organization owning the IP range",
+                          "example": "Google LLC"
+                        },
+                        "isp": {
+                          "type": "string",
+                          "description": "Internet Service Provider",
+                          "example": "Google Cloud"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "example1": {
+                    "summary": "Example IP lookup response",
+                    "value": {
+                      "ip": "203.0.113.42",
+                      "network": {
+                        "asn": "AS15169",
+                        "organization": "Google LLC",
+                        "isp": "Google Cloud"
+                      }
+                    }
+                  }
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "203.0.113.42"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Unable to determine IP address"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "IP Lookup",
+      "description": "Operations for looking up public IP addresses and network information"
+    }
+  ]
+}

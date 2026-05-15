@@ -1,0 +1,26 @@
+{
+  "existing": {
+    "get_ip_address": {
+      "GET_IP_ADDRESS00": {
+        "ip": "s14",
+        "network": {}
+      },
+      "GET_IP_ADDRESS01": {
+        "ip": "s28",
+        "network": {}
+      },
+      "GET_IP_ADDRESS02": {
+        "ip": "s3c",
+        "network": {}
+      }
+    }
+  },
+  "new": {
+    "get_ip_address": {
+      "get_ip_address_ref01": {
+        "ip": "s50",
+        "network": {}
+      }
+    }
+  }
+}

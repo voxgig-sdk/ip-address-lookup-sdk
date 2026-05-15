@@ -1,0 +1,39 @@
+# Entity: get_ip_address
+
+main: kit: entity: get_ip_address: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "ip"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "network"
+      req: false
+      type: "`$OBJECT`"
+    }
+  ]
+
+  name: "get_ip_address"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/"
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
