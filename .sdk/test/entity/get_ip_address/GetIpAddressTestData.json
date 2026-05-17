@@ -3,15 +3,18 @@
     "get_ip_address": {
       "GET_IP_ADDRESS00": {
         "ip": "s14",
-        "network": {}
+        "network": {},
+        "id": "GET_IP_ADDRESS00"
       },
       "GET_IP_ADDRESS01": {
         "ip": "s28",
-        "network": {}
+        "network": {},
+        "id": "GET_IP_ADDRESS01"
       },
       "GET_IP_ADDRESS02": {
         "ip": "s3c",
-        "network": {}
+        "network": {},
+        "id": "GET_IP_ADDRESS02"
       }
     }
   },

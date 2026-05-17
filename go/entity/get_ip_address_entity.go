@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/ip-address-lookup-sdk/core"
+	"github.com/voxgig-sdk/ip-address-lookup-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/ip-address-lookup-sdk/go/utility/struct"
 )
 
 type GetIpAddressEntity struct {
