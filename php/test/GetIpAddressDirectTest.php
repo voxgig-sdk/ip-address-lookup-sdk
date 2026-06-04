@@ -67,14 +67,12 @@ function get_ip_address_direct_setup($mockres)
     $env = Runner::env_override([
         "IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID" => [],
         "IPADDRESSLOOKUP_TEST_LIVE" => "FALSE",
-        "IPADDRESSLOOKUP_APIKEY" => "NONE",
     ]);
 
     $live = $env["IPADDRESSLOOKUP_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["IPADDRESSLOOKUP_APIKEY"],
         ];
         $client = new IpAddressLookupSDK($merged_opts);
         return [

@@ -85,7 +85,6 @@ function get_ip_address_basic_setup($extra)
         "IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID" => $idmap,
         "IPADDRESSLOOKUP_TEST_LIVE" => "FALSE",
         "IPADDRESSLOOKUP_TEST_EXPLAIN" => "FALSE",
-        "IPADDRESSLOOKUP_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +96,6 @@ function get_ip_address_basic_setup($extra)
     if ($env["IPADDRESSLOOKUP_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["IPADDRESSLOOKUP_APIKEY"],
             ],
             $extra ?? [],
         ]);

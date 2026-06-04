@@ -74,14 +74,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID': {},
     'IPADDRESSLOOKUP_TEST_LIVE': 'FALSE',
-    'IPADDRESSLOOKUP_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.IPADDRESSLOOKUP_TEST_LIVE
 
   if (live) {
     const client = new IpAddressLookupSDK({
-      apikey: env.IPADDRESSLOOKUP_APIKEY,
     })
 
     let idmap: any = env['IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID']

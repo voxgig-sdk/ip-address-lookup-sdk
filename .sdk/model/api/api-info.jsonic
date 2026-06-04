@@ -16,8 +16,21 @@ main: {
       ]
       title: "IP Address Lookup"
       version: "1.0.0"
+      tagline: "Look up your public IP address and basic network info over plain HTTP"
+      homepage: "https://ipty.org"
+      docs_url: "https://freepublicapis.com/ip-address-lookup"
+      about_md: `IP Address Lookup is a small public-IP service reachable at \`https://ipty.org\` (with the API hosted at \`https://api.ipty.org\`). It is catalogued on [Free Public APIs](https://freepublicapis.com/ip-address-lookup) as a no-key endpoint for retrieving the caller's public IP address along with associated network information.
+
+What you get from the API:
+
+- The caller's public IP address
+- Associated network information returned in the response
+
+Operational notes: no authentication is required and CORS is disabled, so calls must be made from a server or non-browser client. At the time of cataloguing on Free Public APIs the endpoint was reported as unreachable, so availability should be verified before relying on it in production.`
+      entity_desc: {
+        get_ip_address: "Returns the caller's public IP address and associated network information from the root endpoint at `https://api.ipty.org`."
+      }
+      auth: false
     }
   }
-}
-
 }

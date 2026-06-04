@@ -117,7 +117,6 @@ func get_ip_addressBasicSetup(extra map[string]any) *entityTestSetup {
 		"IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID": idmap,
 		"IPADDRESSLOOKUP_TEST_LIVE":      "FALSE",
 		"IPADDRESSLOOKUP_TEST_EXPLAIN":   "FALSE",
-		"IPADDRESSLOOKUP_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID"])
@@ -128,7 +127,6 @@ func get_ip_addressBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["IPADDRESSLOOKUP_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["IPADDRESSLOOKUP_APIKEY"],
 			},
 			extra,
 		})
