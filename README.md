@@ -1,19 +1,8 @@
 # IpAddressLookup SDK
 
-Look up your public IP address and basic network info over plain HTTP
+IP Address Lookup client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About IP Address Lookup
-
-IP Address Lookup is a small public-IP service reachable at `https://ipty.org` (with the API hosted at `https://api.ipty.org`). It is catalogued on [Free Public APIs](https://freepublicapis.com/ip-address-lookup) as a no-key endpoint for retrieving the caller's public IP address along with associated network information.
-
-What you get from the API:
-
-- The caller's public IP address
-- Associated network information returned in the response
-
-Operational notes: no authentication is required and CORS is disabled, so calls must be made from a server or non-browser client. At the time of cataloguing on Free Public APIs the endpoint was reported as unreachable, so availability should be verified before relying on it in production.
 
 ## Try it
 
@@ -47,27 +36,31 @@ gem install ip-address-lookup-sdk
 luarocks install ip-address-lookup-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { IpAddressLookupSDK } from 'ip-address-lookup'
 
-const client = new IpAddressLookupSDK({})
+const client = new IpAddressLookupSDK({
+  apikey: process.env.IP-ADDRESS-LOOKUP_APIKEY,
+})
 
+// Load getipaddress data
+const getipaddress = await client.GetIpAddress().load({})
+console.log(getipaddress.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -97,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **GetIpAddress** | Returns the caller's public IP address and associated network information from the root endpoint at `https://api.ipty.org`. | `/` |
+| **GetIpAddress** |  | `/` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -107,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from ipaddresslookup_sdk import IpAddressLookupSDK
 
-client = IpAddressLookupSDK({})
+client = IpAddressLookupSDK({
+    "apikey": os.environ.get("IP-ADDRESS-LOOKUP_APIKEY"),
+})
 
 
 # Load a specific getipaddress
-getipaddress, err = client.GetIpAddress(None).load(
-    {"id": "example_id"}, None
-)
+getipaddress, err = client.GetIpAddress().load({"id": "example_id"})
+print(getipaddress)
 ```
 
 ### PHP
@@ -124,13 +119,14 @@ getipaddress, err = client.GetIpAddress(None).load(
 <?php
 require_once 'ipaddresslookup_sdk.php';
 
-$client = new IpAddressLookupSDK([]);
+$client = new IpAddressLookupSDK([
+    "apikey" => getenv("IP-ADDRESS-LOOKUP_APIKEY"),
+]);
 
 
 // Load a specific getipaddress
-[$getipaddress, $err] = $client->GetIpAddress(null)->load(
-    ["id" => "example_id"], null
-);
+[$getipaddress, $err] = $client->GetIpAddress()->load(["id" => "example_id"]);
+print_r($getipaddress);
 ```
 
 ### Golang
@@ -138,8 +134,13 @@ $client = new IpAddressLookupSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/ip-address-lookup-sdk/go"
 
-client := sdk.NewIpAddressLookupSDK(map[string]any{})
+client := sdk.NewIpAddressLookupSDK(map[string]any{
+    "apikey": os.Getenv("IP-ADDRESS-LOOKUP_APIKEY"),
+})
 
+// Load getipaddress data
+getipaddress, err := client.GetIpAddress(nil).Load(map[string]any{}, nil)
+fmt.Println(getipaddress)
 ```
 
 ### Ruby
@@ -147,13 +148,14 @@ client := sdk.NewIpAddressLookupSDK(map[string]any{})
 ```ruby
 require_relative "IpAddressLookup_sdk"
 
-client = IpAddressLookupSDK.new({})
+client = IpAddressLookupSDK.new({
+  "apikey" => ENV["IP-ADDRESS-LOOKUP_APIKEY"],
+})
 
 
 # Load a specific getipaddress
-getipaddress, err = client.GetIpAddress(nil).load(
-  { "id" => "example_id" }, nil
-)
+getipaddress, err = client.GetIpAddress().load({ "id" => "example_id" })
+puts getipaddress
 ```
 
 ### Lua
@@ -161,13 +163,14 @@ getipaddress, err = client.GetIpAddress(nil).load(
 ```lua
 local sdk = require("ip-address-lookup_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("IP-ADDRESS-LOOKUP_APIKEY"),
+})
 
 
 -- Load a specific getipaddress
-local getipaddress, err = client:GetIpAddress(nil):load(
-  { id = "example_id" }, nil
-)
+local getipaddress, err = client:GetIpAddress():load({ id = "example_id" })
+print(getipaddress)
 ```
 
 ## Unit testing in offline mode
@@ -186,25 +189,21 @@ const result = await client.GetIpAddress().load({ id: 'test01' })
 ### Python
 
 ```python
-client = IpAddressLookupSDK.test(None, None)
-result, err = client.GetIpAddress(None).load(
-    {"id": "test01"}, None
-)
+client = IpAddressLookupSDK.test()
+result, err = client.GetIpAddress().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = IpAddressLookupSDK::test(null, null);
-[$result, $err] = $client->GetIpAddress(null)->load(
-    ["id" => "test01"], null
-);
+$client = IpAddressLookupSDK::test();
+[$result, $err] = $client->GetIpAddress()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.GetIpAddress(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -213,19 +212,15 @@ result, err := client.GetIpAddress(nil).Load(
 ### Ruby
 
 ```ruby
-client = IpAddressLookupSDK.test(nil, nil)
-result, err = client.GetIpAddress(nil).load(
-  { "id" => "test01" }, nil
-)
+client = IpAddressLookupSDK.test
+result, err = client.GetIpAddress().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:GetIpAddress(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:GetIpAddress():load({ id = "test01" })
 ```
 
 ## How it works
@@ -329,11 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the IP Address Lookup
-
-- Upstream: [https://ipty.org](https://ipty.org)
-- API docs: [https://freepublicapis.com/ip-address-lookup](https://freepublicapis.com/ip-address-lookup)
 
 ---
 

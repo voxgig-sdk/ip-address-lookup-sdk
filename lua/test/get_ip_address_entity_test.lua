@@ -91,6 +91,7 @@ function get_ip_address_basic_setup(extra)
     ["IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID"] = idmap,
     ["IPADDRESSLOOKUP_TEST_LIVE"] = "FALSE",
     ["IPADDRESSLOOKUP_TEST_EXPLAIN"] = "FALSE",
+    ["IPADDRESSLOOKUP_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ function get_ip_address_basic_setup(extra)
   if env["IPADDRESSLOOKUP_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["IPADDRESSLOOKUP_APIKEY"],
       },
       extra or {},
     })

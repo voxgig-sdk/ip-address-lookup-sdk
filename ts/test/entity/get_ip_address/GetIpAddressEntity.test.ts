@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'IP_ADDRESS_LOOKUP_TEST_GET_IP_ADDRESS_ENTID': idmap,
     'IP_ADDRESS_LOOKUP_TEST_LIVE': 'FALSE',
     'IP_ADDRESS_LOOKUP_TEST_EXPLAIN': 'FALSE',
+    'IP_ADDRESS_LOOKUP_APIKEY': 'NONE',
   })
 
   idmap = env['IP_ADDRESS_LOOKUP_TEST_GET_IP_ADDRESS_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new IpAddressLookupSDK(merge([
       {
+        apikey: env.IP_ADDRESS_LOOKUP_APIKEY,
       },
       extra
     ]))

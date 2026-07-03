@@ -99,12 +99,14 @@ func get_ip_addressDirectSetup(mockres any) *get_ip_addressDirectSetupResult {
 	env := envOverride(map[string]any{
 		"IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID": map[string]any{},
 		"IPADDRESSLOOKUP_TEST_LIVE":    "FALSE",
+		"IPADDRESSLOOKUP_APIKEY":       "NONE",
 	})
 
 	live := env["IPADDRESSLOOKUP_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["IPADDRESSLOOKUP_APIKEY"],
 		}
 		client := sdk.NewIpAddressLookupSDK(mergedOpts)
 

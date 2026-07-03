@@ -62,12 +62,14 @@ function get_ip_address_direct_setup(mockres)
   local env = runner.env_override({
     ["IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID"] = {},
     ["IPADDRESSLOOKUP_TEST_LIVE"] = "FALSE",
+    ["IPADDRESSLOOKUP_APIKEY"] = "NONE",
   })
 
   local live = env["IPADDRESSLOOKUP_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["IPADDRESSLOOKUP_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {
