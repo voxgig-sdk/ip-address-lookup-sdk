@@ -10,13 +10,13 @@ The Ruby SDK for the IpAddressLookup API — an entity-oriented client using idi
 
 ## Install
 ```bash
-gem install ip-address-lookup-sdk
+gem install voxgig-sdk-ip-address-lookup
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "ip-address-lookup-sdk"
+gem "voxgig-sdk-ip-address-lookup"
 ```
 
 Then run:

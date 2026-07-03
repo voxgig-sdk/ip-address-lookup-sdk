@@ -10,7 +10,7 @@ The Lua SDK for the IpAddressLookup API — an entity-oriented client using Lua 
 
 ## Install
 ```bash
-luarocks install ip-address-lookup-sdk
+luarocks install voxgig-sdk-ip-address-lookup
 ```
 
 If the module is not yet published, add the source directory to

@@ -10,7 +10,7 @@ The PHP SDK for the IpAddressLookup API — an entity-oriented client using PHP 
 
 ## Install
 ```bash
-composer require voxgig/ip-address-lookup-sdk
+composer require voxgig-sdk/ip-address-lookup
 ```
 
 

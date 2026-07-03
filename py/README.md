@@ -10,7 +10,7 @@ The Python SDK for the IpAddressLookup API — an entity-oriented client followi
 
 ## Install
 ```bash
-pip install ip-address-lookup-sdk
+pip install voxgig-sdk-ip-address-lookup
 ```
 
 Or install from source:

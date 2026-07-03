@@ -10,7 +10,7 @@ The TypeScript SDK for the IpAddressLookup API — a type-safe, entity-oriented 
 
 ## Install
 ```bash
-npm install ip-address-lookup
+npm install @voxgig-sdk/ip-address-lookup
 ```
 ## Tutorial: your first API call
 

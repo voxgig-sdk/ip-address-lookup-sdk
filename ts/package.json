@@ -1,7 +1,23 @@
 {
   "name": "@voxgig-sdk/ip-address-lookup",
   "version": "0.0.1",
-  "description": "DESCRIPTION",
+  "description": "Unofficial generated TypeScript SDK for the IP Address Lookup public API. Not affiliated with or endorsed by the upstream API provider.",
+  "keywords": [
+    "voxgig",
+    "sdk",
+    "generated-sdk",
+    "openapi",
+    "api-client",
+    "ip-address-lookup"
+  ],
+  "homepage": "https://github.com/voxgig-sdk/ip-address-lookup-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voxgig-sdk/ip-address-lookup-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voxgig-sdk/ip-address-lookup-sdk/issues"
+  },
   "main": "dist/IpAddressLookupSDK.js",
   "type": "commonjs",
   "types": "dist/IpAddressLookupSDK.d.ts",
@@ -14,7 +30,10 @@
     "clean": "rm -rf node_modules yarn.lock package-lock.json",
     "reset": "npm run clean && npm i && npm run build && npm test"
   },
-  "author": "IpAddressLookup",
+  "author": {
+    "name": "Voxgig",
+    "url": "https://voxgig.com"
+  },
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {},
