@@ -245,6 +245,9 @@ func (sdk *IpAddressLookupSDK) Direct(fetchargs map[string]any) (map[string]any,
 }
 
 
+// GetIpAddress returns a GetIpAddress entity bound to this client.
+// Idiomatic usage: client.GetIpAddress(nil).List(nil, nil) or
+// client.GetIpAddress(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *IpAddressLookupSDK) GetIpAddress(data map[string]any) IpAddressLookupEntity {
 	return NewGetIpAddressEntityFunc(sdk, data)
 }

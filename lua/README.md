@@ -9,12 +9,9 @@ The Lua SDK for the IpAddressLookup API — an entity-oriented client using Lua 
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-ip-address-lookup
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("ip-address-lookup_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("IP-ADDRESS-LOOKUP_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 3. Load a getipaddress
 
 ```lua
-local result, err = client:GetIpAddress():load({ id = "example_id" })
+local result, err = client:getipaddress():load({ id = "example_id" })
 if err then error(err) end
 print(result)
 ```
@@ -87,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:IpAddressLookup():load({ id = "test01" })
+local result, err = client:getipaddress():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -120,8 +115,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-IP-ADDRESS-LOOKUP_TEST_LIVE=TRUE
-IP-ADDRESS-LOOKUP_APIKEY=<your-key>
+IP_ADDRESS_LOOKUP_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -144,7 +138,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -222,7 +215,7 @@ API path: `/`
 
 ### GetIpAddress
 
-Create an instance: `const get_ip_address = client.GetIpAddress()`
+Create an instance: `const get_ip_address = client.get_ip_address`
 
 #### Operations
 
@@ -240,7 +233,7 @@ Create an instance: `const get_ip_address = client.GetIpAddress()`
 #### Example: Load
 
 ```ts
-const get_ip_address = await client.GetIpAddress().load({ id: 'get_ip_address_id' })
+const get_ip_address = await client.get_ip_address.load({ id: 'get_ip_address_id' })
 ```
 
 
@@ -315,11 +308,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local getipaddress = client:getipaddress()
+getipaddress:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- getipaddress:data_get() now returns the loaded getipaddress data
+-- getipaddress:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

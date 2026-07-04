@@ -42,8 +42,7 @@ class GetIpAddressEntityTest < Minitest::Test
     # LOAD
     get_ip_address_ref01_ent = client.GetIpAddress(nil)
     get_ip_address_ref01_match_dt0 = {}
-    get_ip_address_ref01_data_dt0_loaded, err = get_ip_address_ref01_ent.load(get_ip_address_ref01_match_dt0, nil)
-    assert_nil err
+    get_ip_address_ref01_data_dt0_loaded = get_ip_address_ref01_ent.load(get_ip_address_ref01_match_dt0, nil)
     assert !get_ip_address_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def get_ip_address_basic_setup(extra)
     "IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID" => idmap,
     "IPADDRESSLOOKUP_TEST_LIVE" => "FALSE",
     "IPADDRESSLOOKUP_TEST_EXPLAIN" => "FALSE",
-    "IPADDRESSLOOKUP_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def get_ip_address_basic_setup(extra)
   if env["IPADDRESSLOOKUP_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["IPADDRESSLOOKUP_APIKEY"],
       },
       extra || {},
     ])

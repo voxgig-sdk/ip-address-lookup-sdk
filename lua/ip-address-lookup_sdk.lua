@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:get_ip_address():list() / client:get_ip_address():load({ id = ... })
+function IpAddressLookupSDK:get_ip_address(data)
+  local EntityMod = require("entity.get_ip_address_entity")
+  if data == nil then
+    if self._get_ip_address == nil then
+      self._get_ip_address = EntityMod.new(self, nil)
+    end
+    return self._get_ip_address
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:get_ip_address() instead.
 function IpAddressLookupSDK:GetIpAddress(data)
   local EntityMod = require("entity.get_ip_address_entity")
   return EntityMod.new(self, data)

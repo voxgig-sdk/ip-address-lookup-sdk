@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  GetIpAddress,
+  GetIpAddressLoadMatch,
+} from '../IpAddressLookupTypes'
 
 // TODO: needs Entity superclass
-class GetIpAddressEntity extends IpAddressLookupEntityBase {
+class GetIpAddressEntity extends IpAddressLookupEntityBase<GetIpAddress> {
 
   constructor(client: IpAddressLookupSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class GetIpAddressEntity extends IpAddressLookupEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: GetIpAddressLoadMatch, ctrl?: Control): Promise<GetIpAddress> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class GetIpAddressEntity extends IpAddressLookupEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<GetIpAddress> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

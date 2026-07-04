@@ -2,6 +2,8 @@
 
 import { GetIpAddressEntity } from './entity/GetIpAddressEntity'
 
+export type * from './IpAddressLookupTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class IpAddressLookupSDK {
 
 
 
+  _get_ip_address?: GetIpAddressEntity
+
+  // Idiomatic facade: `client.get_ip_address.list()` / `client.get_ip_address.load({ id })`.
+  get get_ip_address(): GetIpAddressEntity {
+    return (this._get_ip_address ??= new GetIpAddressEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.get_ip_address` instead. */
   GetIpAddress(data?: any) {
     const self = this
     return new GetIpAddressEntity(self,data)
