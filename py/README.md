@@ -33,10 +33,12 @@ client = IpAddressLookupSDK()
 
 ### 3. Load a getipaddress
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.getipaddress.load({"id": "example_id"})
-    print(result)
+    getipaddress = client.GetIpAddress().load({"id": "example_id"})
+    print(getipaddress)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = IpAddressLookupSDK.test()
 
-result = client.getipaddress.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+getipaddress = client.GetIpAddress().load({"id": "test01"})
+# getipaddress contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -219,7 +222,7 @@ API path: `/`
 
 ### GetIpAddress
 
-Create an instance: `const get_ip_address = client.get_ip_address`
+Create an instance: `get_ip_address = client.GetIpAddress()`
 
 #### Operations
 
@@ -236,8 +239,8 @@ Create an instance: `const get_ip_address = client.get_ip_address`
 
 #### Example: Load
 
-```ts
-const get_ip_address = await client.get_ip_address.load({ id: 'get_ip_address_id' })
+```python
+get_ip_address = client.GetIpAddress().load({"id": "get_ip_address_id"})
 ```
 
 
@@ -311,7 +314,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-getipaddress = client.getipaddress
+getipaddress = client.GetIpAddress()
 getipaddress.load({"id": "example_id"})
 
 # getipaddress.data_get() now returns the loaded getipaddress data

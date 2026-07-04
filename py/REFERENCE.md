@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GetIpAddressEntity
 
 ```python
-get_ip_address = client.get_ip_address
+get_ip_address = client.GetIpAddress()
 ```
 
 ### Fields
@@ -97,7 +97,7 @@ get_ip_address = client.get_ip_address
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.get_ip_address.load({"id": "get_ip_address_id"})
+result = client.GetIpAddress().load({"id": "get_ip_address_id"})
 ```
 
 ### Common Methods

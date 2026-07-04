@@ -220,25 +220,15 @@ class IpAddressLookupSDK:
         }
 
 
-    @property
-    def get_ip_address(self):
-        """Idiomatic facade: client.get_ip_address.list() / client.get_ip_address.load({"id": ...})."""
-        from entity.get_ip_address_entity import GetIpAddressEntity
-        cached = getattr(self, "_get_ip_address", None)
-        if cached is None:
-            cached = GetIpAddressEntity(self, None)
-            self._get_ip_address = cached
-        return cached
-
-    def GetIpAddress(self, data=None):
-        # Deprecated: use client.get_ip_address instead.
+    def GetIpAddress(self, data=None) -> "GetIpAddressEntity":
+        """Entity factory: client.GetIpAddress().list({}) / client.GetIpAddress().load({"id": ...})."""
         from entity.get_ip_address_entity import GetIpAddressEntity
         return GetIpAddressEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "IpAddressLookupSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class IpAddressLookupSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.get_ip_address_entity import GetIpAddressEntity

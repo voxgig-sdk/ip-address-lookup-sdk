@@ -33,9 +33,10 @@ $client = new IpAddressLookupSDK();
 
 ```php
 try {
-    $result = $client->getipaddress()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare GetIpAddress record (throws on error).
+    $getipaddress = $client->GetIpAddress()->load(["id" => "example_id"]);
+    print_r($getipaddress);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = IpAddressLookupSDK::test();
+$client = IpAddressLookupSDK::test([
+    "entity" => ["getipaddress" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->getipaddress()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$getipaddress = $client->GetIpAddress()->load(["id" => "test01"]);
+print_r($getipaddress);
 ```
 
 ### Use a custom fetch function
@@ -224,7 +229,7 @@ API path: `/`
 
 ### GetIpAddress
 
-Create an instance: `const get_ip_address = client.get_ip_address`
+Create an instance: `$get_ip_address = $client->GetIpAddress();`
 
 #### Operations
 
@@ -241,8 +246,9 @@ Create an instance: `const get_ip_address = client.get_ip_address`
 
 #### Example: Load
 
-```ts
-const get_ip_address = await client.get_ip_address.load({ id: 'get_ip_address_id' })
+```php
+// load() returns the bare GetIpAddress record (throws on error).
+$get_ip_address = $client->GetIpAddress()->load(["id" => "get_ip_address_id"]);
 ```
 
 
@@ -317,7 +323,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$getipaddress = $client->getipaddress();
+$getipaddress = $client->GetIpAddress();
 $getipaddress->load(["id" => "example_id"]);
 
 // $getipaddress->dataGet() now returns the loaded getipaddress data

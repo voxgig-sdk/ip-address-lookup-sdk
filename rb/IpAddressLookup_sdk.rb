@@ -208,13 +208,7 @@ class IpAddressLookupSDK
   end
 
 
-  # Idiomatic facade: client.get_ip_address.list / client.get_ip_address.load({ "id" => ... })
-  def get_ip_address
-    require_relative 'entity/get_ip_address_entity'
-    @get_ip_address ||= GetIpAddressEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.get_ip_address instead.
+  # Canonical facade: client.GetIpAddress.list / client.GetIpAddress.load({ "id" => ... })
   def GetIpAddress(data = nil)
     require_relative 'entity/get_ip_address_entity'
     GetIpAddressEntity.new(self, data)

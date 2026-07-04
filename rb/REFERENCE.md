@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## GetIpAddressEntity
 
 ```ruby
-get_ip_address = client.get_ip_address
+get_ip_address = client.GetIpAddress
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ get_ip_address = client.get_ip_address
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.get_ip_address.load({ "id" => "get_ip_address_id" })
+result = client.GetIpAddress.load({ "id" => "get_ip_address_id" })
 ```
 
 ### Common Methods

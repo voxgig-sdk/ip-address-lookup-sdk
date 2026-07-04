@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:get_ip_address():list() / client:get_ip_address():load({ id = ... })
-function IpAddressLookupSDK:get_ip_address(data)
+-- Idiomatic facade: client:GetIpAddress():list() / client:GetIpAddress():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function IpAddressLookupSDK:GetIpAddress(data)
   local EntityMod = require("entity.get_ip_address_entity")
   if data == nil then
     if self._get_ip_address == nil then
@@ -253,12 +254,6 @@ function IpAddressLookupSDK:get_ip_address(data)
     end
     return self._get_ip_address
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:get_ip_address() instead.
-function IpAddressLookupSDK:GetIpAddress(data)
-  local EntityMod = require("entity.get_ip_address_entity")
   return EntityMod.new(self, data)
 end
 

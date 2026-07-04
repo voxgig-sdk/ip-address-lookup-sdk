@@ -26,9 +26,9 @@ import { IpAddressLookupSDK } from '@voxgig-sdk/ip-address-lookup'
 
 const client = new IpAddressLookupSDK()
 
-// Load getipaddress data
-const getipaddress = await client.getipaddress.load({})
-console.log(getipaddress.data)
+// Load getipaddress data (returns a GetIpAddress)
+const getipaddress = await client.GetIpAddress().load()
+console.log(getipaddress)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from ipaddresslookup_sdk import IpAddressLookupSDK
 client = IpAddressLookupSDK()
 
 
-# Load a specific getipaddress
-getipaddress = client.getipaddress.load({"id": "example_id"})
+# Load a specific getipaddress (returns the record, raises on error)
+getipaddress = client.GetIpAddress().load({"id": "example_id"})
 print(getipaddress)
 ```
 
@@ -98,8 +98,8 @@ require_once 'ipaddresslookup_sdk.php';
 $client = new IpAddressLookupSDK();
 
 
-// Load a specific getipaddress
-$getipaddress = $client->getipaddress()->load(["id" => "example_id"]);
+// Load a specific getipaddress (returns the bare record; throws on error)
+$getipaddress = $client->GetIpAddress()->load(["id" => "example_id"]);
 print_r($getipaddress);
 ```
 
@@ -123,8 +123,8 @@ require_relative "IpAddressLookup_sdk"
 client = IpAddressLookupSDK.new
 
 
-# Load a specific getipaddress
-getipaddress = client.getipaddress.load({ "id" => "example_id" })
+# Load a specific getipaddress (returns the bare record; raises on error)
+getipaddress = client.GetIpAddress.load({ "id" => "example_id" })
 puts getipaddress
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific getipaddress
-local getipaddress, err = client:getipaddress():load({ id = "example_id" })
+local getipaddress, err = client:GetIpAddress():load({ id = "example_id" })
 print(getipaddress)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = IpAddressLookupSDK.test()
-const result = await client.getipaddress.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const getipaddress = await client.GetIpAddress().load({ id: 'test01' })
+// getipaddress is a bare GetIpAddress populated with mock data
+console.log(getipaddress)
 ```
 
 ### Python
 
 ```python
 client = IpAddressLookupSDK.test()
-result = client.getipaddress.load({"id": "test01"})
+getipaddress = client.GetIpAddress().load({"id": "test01"})
+print(getipaddress)
 ```
 
 ### PHP
 
 ```php
-$client = IpAddressLookupSDK::test();
-$result = $client->getipaddress()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = IpAddressLookupSDK::test([
+    "entity" => ["getipaddress" => ["test01" => ["id" => "test01"]]],
+]);
+$getipaddress = $client->GetIpAddress()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.GetIpAddress(nil).Load(
 ### Ruby
 
 ```ruby
-client = IpAddressLookupSDK.test
-result = client.getipaddress.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = IpAddressLookupSDK.test({
+  "entity" => { "getipaddress" => { "test01" => { "id" => "test01" } } },
+})
+getipaddress = client.GetIpAddress.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:getipaddress():load({ id = "test01" })
+local result, err = client:GetIpAddress():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

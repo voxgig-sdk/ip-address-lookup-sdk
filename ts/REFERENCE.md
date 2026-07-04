@@ -109,7 +109,7 @@ Alias for `IpAddressLookupSDK.test()`.
 ## GetIpAddressEntity
 
 ```ts
-const get_ip_address = client.get_ip_address
+const get_ip_address = client.GetIpAddress()
 ```
 
 ### Fields
@@ -126,7 +126,7 @@ const get_ip_address = client.get_ip_address
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.get_ip_address.load({ id: 'get_ip_address_id' })
+const result = await client.GetIpAddress().load({ id: 'get_ip_address_id' })
 ```
 
 ### Common Methods

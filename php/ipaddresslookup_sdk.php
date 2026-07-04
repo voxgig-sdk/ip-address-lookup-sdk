@@ -233,10 +233,10 @@ class IpAddressLookupSDK
 
     private $_get_ip_address = null;
 
-    // Idiomatic facade: $client->get_ip_address()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GetIpAddress() (PHP method
-    // names are case-insensitive).
-    public function get_ip_address($data = null)
+    // Canonical facade: $client->GetIpAddress()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->get_ip_address()
+    // resolves here too.
+    public function GetIpAddress($data = null)
     {
         require_once __DIR__ . '/entity/get_ip_address_entity.php';
         if ($data === null) {

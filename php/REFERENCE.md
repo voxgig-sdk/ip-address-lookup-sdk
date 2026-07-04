@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## GetIpAddressEntity
 
 ```php
-$get_ip_address = $client->get_ip_address();
+$get_ip_address = $client->GetIpAddress();
 ```
 
 ### Fields
@@ -102,7 +102,7 @@ $get_ip_address = $client->get_ip_address();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->get_ip_address()->load(["id" => "get_ip_address_id"]);
+$result = $client->GetIpAddress()->load(["id" => "get_ip_address_id"]);
 ```
 
 ### Common Methods
