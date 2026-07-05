@@ -10,5 +10,8 @@ export interface GetIpAddress {
   network?: Record<string, any>
 }
 
-export type GetIpAddressLoadMatch = Partial<GetIpAddress>
+export interface GetIpAddressLoadMatch {
+  ip?: string
+  network?: Record<string, any>
+}
 

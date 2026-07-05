@@ -8,7 +8,7 @@ Complete API reference for the IpAddressLookup PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/ip-address-lookup_sdk.php';
+require_once __DIR__ . '/ipaddresslookup_sdk.php';
 
 $client = new IpAddressLookupSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = IpAddressLookupSDK::test();
 
 Create a new `GetIpAddressEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): IpAddressLookupUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,8 +92,8 @@ $get_ip_address = $client->GetIpAddress();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | ``$STRING`` | No |  |
-| `network` | ``$OBJECT`` | No |  |
+| `ip` | `string` | No |  |
+| `network` | `array` | No |  |
 
 ### Operations
 
@@ -102,24 +102,24 @@ $get_ip_address = $client->GetIpAddress();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->GetIpAddress()->load(["id" => "get_ip_address_id"]);
+$result = $client->GetIpAddress()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -128,7 +128,7 @@ Set the entity match criteria.
 Create a new `GetIpAddressEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

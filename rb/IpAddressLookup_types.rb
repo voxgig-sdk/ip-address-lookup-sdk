@@ -21,7 +21,7 @@ GetIpAddress = Struct.new(
   keyword_init: true
 )
 
-# Match filter for GetIpAddress#load (any subset of GetIpAddress fields).
+# Request payload for GetIpAddress#load.
 #
 # @!attribute [rw] ip
 #   @return [String, nil]

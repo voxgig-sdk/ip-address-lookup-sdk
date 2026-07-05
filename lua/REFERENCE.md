@@ -90,8 +90,8 @@ local get_ip_address = client:GetIpAddress(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | ``$STRING`` | No |  |
-| `network` | ``$OBJECT`` | No |  |
+| `ip` | `string` | No |  |
+| `network` | `table` | No |  |
 
 ### Operations
 
@@ -100,7 +100,7 @@ local get_ip_address = client:GetIpAddress(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GetIpAddress():load({ id = "get_ip_address_id" })
+local result, err = client:GetIpAddress():load()
 ```
 
 ### Common Methods

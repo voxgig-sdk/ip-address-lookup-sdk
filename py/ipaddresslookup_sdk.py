@@ -221,7 +221,7 @@ class IpAddressLookupSDK:
 
 
     def GetIpAddress(self, data=None) -> "GetIpAddressEntity":
-        """Entity factory: client.GetIpAddress().list({}) / client.GetIpAddress().load({"id": ...})."""
+        """Entity factory: client.GetIpAddress().list() / client.GetIpAddress().load({"id": ...})."""
         from entity.get_ip_address_entity import GetIpAddressEntity
         return GetIpAddressEntity(self, data)
 

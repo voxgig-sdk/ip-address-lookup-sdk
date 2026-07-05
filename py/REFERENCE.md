@@ -8,7 +8,7 @@ Complete API reference for the IpAddressLookup Python SDK.
 ### Constructor
 
 ```python
-from ip-address-lookup_sdk import IpAddressLookupSDK
+from ipaddresslookup_sdk import IpAddressLookupSDK
 
 client = IpAddressLookupSDK(options)
 ```
@@ -87,8 +87,8 @@ get_ip_address = client.GetIpAddress()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | ``$STRING`` | No |  |
-| `network` | ``$OBJECT`` | No |  |
+| `ip` | `str` | No |  |
+| `network` | `dict` | No |  |
 
 ### Operations
 
@@ -97,7 +97,7 @@ get_ip_address = client.GetIpAddress()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.GetIpAddress().load({"id": "get_ip_address_id"})
+result = client.GetIpAddress().load()
 ```
 
 ### Common Methods

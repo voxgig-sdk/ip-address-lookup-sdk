@@ -116,8 +116,8 @@ const get_ip_address = client.GetIpAddress()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | ``$STRING`` | No |  |
-| `network` | ``$OBJECT`` | No |  |
+| `ip` | `string` | No |  |
+| `network` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -126,7 +126,7 @@ const get_ip_address = client.GetIpAddress()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GetIpAddress().load({ id: 'get_ip_address_id' })
+const result = await client.GetIpAddress().load()
 ```
 
 ### Common Methods

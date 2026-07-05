@@ -8,7 +8,7 @@ Complete API reference for the IpAddressLookup Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'ip-address-lookup_sdk'
+require_relative 'IpAddressLookup_sdk'
 
 client = IpAddressLookupSDK.new(options)
 ```
@@ -93,8 +93,8 @@ get_ip_address = client.GetIpAddress
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | ``$STRING`` | No |  |
-| `network` | ``$OBJECT`` | No |  |
+| `ip` | `String` | No |  |
+| `network` | `Hash` | No |  |
 
 ### Operations
 
@@ -103,7 +103,7 @@ get_ip_address = client.GetIpAddress
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.GetIpAddress.load({ "id" => "get_ip_address_id" })
+result = client.GetIpAddress.load()
 ```
 
 ### Common Methods

@@ -11,6 +11,8 @@
 ---@field network? table
 
 ---@class GetIpAddressLoadMatch
+---@field ip? string
+---@field network? table
 
 local M = {}
 

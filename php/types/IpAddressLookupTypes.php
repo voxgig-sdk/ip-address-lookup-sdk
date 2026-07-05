@@ -19,7 +19,7 @@ class GetIpAddress
     public ?array $network = null;
 }
 
-/** Match filter for GetIpAddress#load (any subset of GetIpAddress fields). */
+/** Request payload for GetIpAddress#load. */
 class GetIpAddressLoadMatch
 {
     public ?string $ip = null;

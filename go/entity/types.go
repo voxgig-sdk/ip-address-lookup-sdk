@@ -14,8 +14,7 @@ type GetIpAddress struct {
 	Network *map[string]any `json:"network,omitempty"`
 }
 
-// GetIpAddressLoadMatch mirrors the get_ip_address fields as an all-optional match
-// filter (Go analog of Partial<GetIpAddress>).
+// GetIpAddressLoadMatch is the typed request payload for GetIpAddress.LoadTyped.
 type GetIpAddressLoadMatch struct {
 	Ip *string `json:"ip,omitempty"`
 	Network *map[string]any `json:"network,omitempty"`

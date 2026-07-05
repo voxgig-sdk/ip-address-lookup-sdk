@@ -97,8 +97,8 @@ get_ip_address := client.GetIpAddress(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | ``$STRING`` | No |  |
-| `network` | ``$OBJECT`` | No |  |
+| `ip` | `string` | No |  |
+| `network` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -107,7 +107,7 @@ get_ip_address := client.GetIpAddress(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.GetIpAddress(nil).Load(map[string]any{"id": "get_ip_address_id"}, nil)
+result, err := client.GetIpAddress(nil).Load(nil, nil)
 ```
 
 ### Common Methods
