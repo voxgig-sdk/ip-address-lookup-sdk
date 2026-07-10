@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -198,14 +195,17 @@
           "url": "https://ipty.org"
         },
         "description": "This API provides the public IP address of a user along with their network information. It allows users to easily find and share their IP address using a simple HTTP request.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://ipty.org"
           }
         ],
+        "summary": "This API provides the public IP address of a user along with their network information.",
         "title": "IP Address Lookup",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://ipty.org"
       },
       "option": {},
       "target": {
@@ -258,6 +258,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -308,6 +311,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
