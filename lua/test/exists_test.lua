@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- IpAddressLookup SDK exists test
 
 local sdk = require("ip-address-lookup_sdk")
 
