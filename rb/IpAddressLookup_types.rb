@@ -10,27 +10,35 @@
 
 # GetIpAddress entity data model.
 #
-# @!attribute [rw] ip
+# @!attribute [rw] asn
 #   @return [String, nil]
 #
-# @!attribute [rw] network
-#   @return [Hash, nil]
+# @!attribute [rw] isp
+#   @return [String, nil]
+#
+# @!attribute [rw] organization
+#   @return [String, nil]
 GetIpAddress = Struct.new(
-  :ip,
-  :network,
+  :asn,
+  :isp,
+  :organization,
   keyword_init: true
 )
 
 # Request payload for GetIpAddress#load.
 #
-# @!attribute [rw] ip
+# @!attribute [rw] asn
 #   @return [String, nil]
 #
-# @!attribute [rw] network
-#   @return [Hash, nil]
+# @!attribute [rw] isp
+#   @return [String, nil]
+#
+# @!attribute [rw] organization
+#   @return [String, nil]
 GetIpAddressLoadMatch = Struct.new(
-  :ip,
-  :network,
+  :asn,
+  :isp,
+  :organization,
   keyword_init: true
 )
 

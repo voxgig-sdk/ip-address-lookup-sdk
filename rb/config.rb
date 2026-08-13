@@ -27,17 +27,24 @@ module IpAddressLookupConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "ip",
+              "name" => "asn",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 0,
             },
             {
               "active" => true,
-              "name" => "network",
+              "name" => "isp",
               "req" => false,
-              "type" => "`$OBJECT`",
+              "type" => "`$STRING`",
               "index$" => 1,
+            },
+            {
+              "active" => true,
+              "name" => "organization",
+              "req" => false,
+              "type" => "`$STRING`",
+              "index$" => 2,
             },
           ],
           "name" => "get_ip_address",
@@ -49,13 +56,14 @@ module IpAddressLookupConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/",
                   "parts" => [],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.network`",
                   },
                   "index$" => 0,
                 },

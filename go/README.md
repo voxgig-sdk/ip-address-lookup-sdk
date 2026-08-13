@@ -258,8 +258,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"ip"` |  |
-| `"network"` |  |
+| `"asn"` |  |
+| `"isp"` |  |
+| `"organization"` |  |
 
 Operations: Load.
 
@@ -284,8 +285,9 @@ Create an instance: `getIpAddress := client.GetIpAddress(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ip` | `string` |  |
-| `network` | `map[string]any` |  |
+| `asn` | `string` |  |
+| `isp` | `string` |  |
+| `organization` | `string` |  |
 
 #### Example: Load
 

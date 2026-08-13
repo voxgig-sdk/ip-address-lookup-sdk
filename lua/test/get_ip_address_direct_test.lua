@@ -60,11 +60,11 @@ function get_ip_address_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID"] = {},
-    ["IPADDRESSLOOKUP_TEST_LIVE"] = "FALSE",
+    ["IP_ADDRESS_LOOKUP_TEST_GET_IP_ADDRESS_ENTID"] = {},
+    ["IP_ADDRESS_LOOKUP_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["IPADDRESSLOOKUP_TEST_LIVE"] == "TRUE"
+  local live = env["IP_ADDRESS_LOOKUP_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import IpAddressLookupControl
-from core.error import IpAddressLookupError
-from core.result import IpAddressLookupResult
-from core.spec import IpAddressLookupSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import IpAddressLookupControl
+from projectname_sdk.core.error import IpAddressLookupError
+from projectname_sdk.core.result import IpAddressLookupResult
+from projectname_sdk.core.spec import IpAddressLookupSpec
 
 
 # True when this SDK was generated with the named feature.

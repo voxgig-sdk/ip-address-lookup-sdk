@@ -65,11 +65,11 @@ function get_ip_address_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID" => [],
-        "IPADDRESSLOOKUP_TEST_LIVE" => "FALSE",
+        "IP_ADDRESS_LOOKUP_TEST_GET_IP_ADDRESS_ENTID" => [],
+        "IP_ADDRESS_LOOKUP_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["IPADDRESSLOOKUP_TEST_LIVE"] === "TRUE";
+    $live = $env["IP_ADDRESS_LOOKUP_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

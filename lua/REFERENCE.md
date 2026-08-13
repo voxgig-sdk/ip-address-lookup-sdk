@@ -90,8 +90,9 @@ local get_ip_address = client:GetIpAddress(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | `string` | No |  |
-| `network` | `table` | No |  |
+| `asn` | `string` | No |  |
+| `isp` | `string` | No |  |
+| `organization` | `string` | No |  |
 
 ### Operations
 

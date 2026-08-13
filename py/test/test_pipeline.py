@@ -16,11 +16,11 @@
 import pytest
 
 from ipaddresslookup_sdk import IpAddressLookupSDK
-from core.error import IpAddressLookupError
-from core.result import IpAddressLookupResult
-from core.response import IpAddressLookupResponse
-from core.spec import IpAddressLookupSpec
-from feature.base_feature import IpAddressLookupBaseFeature
+from ipaddresslookup_sdk.core.error import IpAddressLookupError
+from ipaddresslookup_sdk.core.result import IpAddressLookupResult
+from ipaddresslookup_sdk.core.response import IpAddressLookupResponse
+from ipaddresslookup_sdk.core.spec import IpAddressLookupSpec
+from ipaddresslookup_sdk.feature.base_feature import IpAddressLookupBaseFeature
 
 
 def _client():

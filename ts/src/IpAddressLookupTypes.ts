@@ -6,12 +6,14 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface GetIpAddress {
-  ip?: string
-  network?: Record<string, any>
+  asn?: string
+  isp?: string
+  organization?: string
 }
 
 export interface GetIpAddressLoadMatch {
-  ip?: string
-  network?: Record<string, any>
+  asn?: string
+  isp?: string
+  organization?: string
 }
 

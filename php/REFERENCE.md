@@ -92,8 +92,9 @@ $get_ip_address = $client->GetIpAddress();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | `string` | No |  |
-| `network` | `array` | No |  |
+| `asn` | `string` | No |  |
+| `isp` | `string` | No |  |
+| `organization` | `string` | No |  |
 
 ### Operations
 

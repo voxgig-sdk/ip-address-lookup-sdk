@@ -98,8 +98,9 @@ fmt.Println(getIpAddress.GetName()) // "get_ip_address"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | `string` | No |  |
-| `network` | `map[string]any` | No |  |
+| `asn` | `string` | No |  |
+| `isp` | `string` | No |  |
+| `organization` | `string` | No |  |
 
 ### Operations
 

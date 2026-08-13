@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = IpAddressLookupSDK.test()
 
 const getipaddress = await client.GetIpAddress().load()
-// getipaddress is a bare entity populated with mock response data
+// getipaddress is the entity, populated with mock response data
+// — call getipaddress.data() for the record itself
 console.log(getipaddress)
 ```
 
@@ -284,8 +285,9 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `ip` |  |
-| `network` |  |
+| `asn` |  |
+| `isp` |  |
+| `organization` |  |
 
 Operations: load.
 
@@ -310,8 +312,9 @@ Create an instance: `const get_ip_address = client.GetIpAddress()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ip` | `string` |  |
-| `network` | `Record<string, any>` |  |
+| `asn` | `string` |  |
+| `isp` | `string` |  |
+| `organization` | `string` |  |
 
 #### Example: Load
 

@@ -34,7 +34,7 @@ client = IpAddressLookupSDK.new
 
 ```ruby
 begin
-  # load returns the bare GetIpAddress record (raises on error).
+  # load returns the ENTITY — call data_get for the GetIpAddress record (raises on error).
   getipaddress = client.GetIpAddress.load()
   puts getipaddress
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = IpAddressLookupSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 getipaddress = client.GetIpAddress.load()
 puts getipaddress
 ```
@@ -234,8 +235,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `ip` |  |
-| `network` |  |
+| `asn` |  |
+| `isp` |  |
+| `organization` |  |
 
 Operations: Load.
 
@@ -260,13 +262,14 @@ Create an instance: `get_ip_address = client.GetIpAddress`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ip` | `String` |  |
-| `network` | `Hash` |  |
+| `asn` | `String` |  |
+| `isp` | `String` |  |
+| `organization` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare GetIpAddress record (raises on error).
+# load returns the ENTITY — call data_get for the GetIpAddress record (raises on error).
 get_ip_address = client.GetIpAddress.load()
 ```
 

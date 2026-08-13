@@ -2,18 +2,21 @@
   "existing": {
     "get_ip_address": {
       "GET_IP_ADDRESS00": {
-        "ip": "s14",
-        "network": {},
+        "asn": "s1e",
+        "isp": "s1f",
+        "organization": "s20",
         "id": "GET_IP_ADDRESS00"
       },
       "GET_IP_ADDRESS01": {
-        "ip": "s28",
-        "network": {},
+        "asn": "s3c",
+        "isp": "s3d",
+        "organization": "s3e",
         "id": "GET_IP_ADDRESS01"
       },
       "GET_IP_ADDRESS02": {
-        "ip": "s3c",
-        "network": {},
+        "asn": "s5a",
+        "isp": "s5b",
+        "organization": "s5c",
         "id": "GET_IP_ADDRESS02"
       }
     }
@@ -21,8 +24,9 @@
   "new": {
     "get_ip_address": {
       "get_ip_address_ref01": {
-        "ip": "s50",
-        "network": {}
+        "asn": "s78",
+        "isp": "s79",
+        "organization": "s7a"
       }
     }
   }

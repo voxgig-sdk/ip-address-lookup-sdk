@@ -116,8 +116,9 @@ const get_ip_address = client.GetIpAddress()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | `string` | No |  |
-| `network` | `Record<string, any>` | No |  |
+| `asn` | `string` | No |  |
+| `isp` | `string` | No |  |
+| `organization` | `string` | No |  |
 
 ### Operations
 

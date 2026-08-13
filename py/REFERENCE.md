@@ -87,8 +87,9 @@ get_ip_address = client.GetIpAddress()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ip` | `str` | No |  |
-| `network` | `dict` | No |  |
+| `asn` | `str` | No |  |
+| `isp` | `str` | No |  |
+| `organization` | `str` | No |  |
 
 ### Operations
 

@@ -7,12 +7,14 @@
 -- edit by hand.
 
 ---@class GetIpAddress
----@field ip? string
----@field network? table
+---@field asn? string
+---@field isp? string
+---@field organization? string
 
 ---@class GetIpAddressLoadMatch
----@field ip? string
----@field network? table
+---@field asn? string
+---@field isp? string
+---@field organization? string
 
 local M = {}
 

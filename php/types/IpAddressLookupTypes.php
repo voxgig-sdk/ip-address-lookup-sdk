@@ -15,14 +15,16 @@ declare(strict_types=1);
 /** GetIpAddress entity data model. */
 class GetIpAddress
 {
-    public ?string $ip = null;
-    public ?array $network = null;
+    public ?string $asn = null;
+    public ?string $isp = null;
+    public ?string $organization = null;
 }
 
 /** Request payload for GetIpAddress#load. */
 class GetIpAddressLoadMatch
 {
-    public ?string $ip = null;
-    public ?array $network = null;
+    public ?string $asn = null;
+    public ?string $isp = null;
+    public ?string $organization = null;
 }
 

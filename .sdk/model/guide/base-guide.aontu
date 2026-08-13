@@ -8,6 +8,7 @@ guide: {
   entity: get_ip_address: {
     path: "/": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.network`")|top
     }
   }
 

@@ -225,8 +225,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `ip` |  |
-| `network` |  |
+| `asn` |  |
+| `isp` |  |
+| `organization` |  |
 
 Operations: Load.
 
@@ -251,8 +252,9 @@ Create an instance: `local get_ip_address = client:GetIpAddress(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ip` | `string` |  |
-| `network` | `table` |  |
+| `asn` | `string` |  |
+| `isp` | `string` |  |
+| `organization` | `string` |  |
 
 #### Example: Load
 

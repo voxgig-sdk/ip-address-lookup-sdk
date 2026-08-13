@@ -26,8 +26,8 @@ import {
 describe('GetIpAddressEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when IPADDRESSLOOKUP_TEST_LIVE=TRUE.
-  afterEach(liveDelay('IPADDRESSLOOKUP_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when IP_ADDRESS_LOOKUP_TEST_LIVE=TRUE.
+  afterEach(liveDelay('IP_ADDRESS_LOOKUP_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = IpAddressLookupSDK.test()
@@ -62,7 +62,7 @@ describe('GetIpAddressEntity', async () => {
     // LOAD
     const get_ip_address_ref01_ent = client.GetIpAddress()
     const get_ip_address_ref01_match_dt0: any = {}
-    const get_ip_address_ref01_data_dt0 = await get_ip_address_ref01_ent.load(get_ip_address_ref01_match_dt0)
+    const get_ip_address_ref01_data_dt0 = (await get_ip_address_ref01_ent.load(get_ip_address_ref01_match_dt0)).data()
     assert(null != get_ip_address_ref01_data_dt0)
 
 

@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from ipaddresslookup_sdk.utility.voxgig_struct import voxgig_struct as vs
 from ipaddresslookup_sdk import IpAddressLookupSDK
-from core import helpers
+from ipaddresslookup_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
@@ -36,7 +36,7 @@ class TestGetIpAddressEntity:
         # without an *_ENTID env override, those IDs hit the live API and 4xx.
         if setup.get("synthetic_only"):
             pytest.skip("live entity test uses synthetic IDs from fixture — "
-                        "set IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID JSON to run live")
+                        "set IP_ADDRESS_LOOKUP_TEST_GET_IP_ADDRESS_ENTID JSON to run live")
         client = setup["client"]
 
         # Bootstrap entity data from existing test data.
@@ -83,21 +83,21 @@ def _get_ip_address_basic_setup(extra):
     # mode is on without a real override, the basic test runs against synthetic
     # IDs from the fixture and 4xx's. We surface this so the test can skip.
     _entid_env_raw = os.environ.get(
-        "IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID")
+        "IP_ADDRESS_LOOKUP_TEST_GET_IP_ADDRESS_ENTID")
     _idmap_overridden = _entid_env_raw is not None and _entid_env_raw.strip().startswith("{")
 
     env = runner.env_override({
-        "IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID": idmap,
-        "IPADDRESSLOOKUP_TEST_LIVE": "FALSE",
-        "IPADDRESSLOOKUP_TEST_EXPLAIN": "FALSE",
+        "IP_ADDRESS_LOOKUP_TEST_GET_IP_ADDRESS_ENTID": idmap,
+        "IP_ADDRESS_LOOKUP_TEST_LIVE": "FALSE",
+        "IP_ADDRESS_LOOKUP_TEST_EXPLAIN": "FALSE",
     })
 
     idmap_resolved = helpers.to_map(
-        env.get("IPADDRESSLOOKUP_TEST_GET_IP_ADDRESS_ENTID"))
+        env.get("IP_ADDRESS_LOOKUP_TEST_GET_IP_ADDRESS_ENTID"))
     if idmap_resolved is None:
         idmap_resolved = helpers.to_map(idmap)
 
-    if env.get("IPADDRESSLOOKUP_TEST_LIVE") == "TRUE":
+    if env.get("IP_ADDRESS_LOOKUP_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
             },
@@ -105,13 +105,13 @@ def _get_ip_address_basic_setup(extra):
         ])
         client = IpAddressLookupSDK(helpers.to_map(merged_opts))
 
-    _live = env.get("IPADDRESSLOOKUP_TEST_LIVE") == "TRUE"
+    _live = env.get("IP_ADDRESS_LOOKUP_TEST_LIVE") == "TRUE"
     return {
         "client": client,
         "data": entity_data,
         "idmap": idmap_resolved,
         "env": env,
-        "explain": env.get("IPADDRESSLOOKUP_TEST_EXPLAIN") == "TRUE",
+        "explain": env.get("IP_ADDRESS_LOOKUP_TEST_EXPLAIN") == "TRUE",
         "live": _live,
         "synthetic_only": _live and not _idmap_overridden,
         "now": int(time.time() * 1000),
