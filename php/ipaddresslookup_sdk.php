@@ -40,7 +40,7 @@ class IpAddressLookupSDK
         $utility = new IpAddressLookupUtility();
         $this->_utility = $utility;
 
-        $config = IpAddressLookupConfig::make_config();
+        $config = IpAddressLookupConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
