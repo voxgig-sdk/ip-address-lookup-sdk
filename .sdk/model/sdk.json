@@ -36,18 +36,21 @@
               "active": true,
               "name": "asn",
               "req": false,
+              "short": "Autonomous System Number",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "isp",
               "req": false,
+              "short": "Internet Service Provider",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "organization",
               "req": false,
+              "short": "Organization owning the IP range",
               "type": "`$STRING`"
             }
           ],

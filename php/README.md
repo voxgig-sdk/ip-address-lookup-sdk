@@ -245,9 +245,9 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `asn` |  |
-| `isp` |  |
-| `organization` |  |
+| `asn` | Autonomous System Number |
+| `isp` | Internet Service Provider |
+| `organization` | Organization owning the IP range |
 
 Operations: Load.
 
@@ -272,9 +272,9 @@ Create an instance: `$get_ip_address = $client->GetIpAddress();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `asn` | `string` |  |
-| `isp` | `string` |  |
-| `organization` | `string` |  |
+| `asn` | `string` | Autonomous System Number |
+| `isp` | `string` | Internet Service Provider |
+| `organization` | `string` | Organization owning the IP range |
 
 #### Example: Load
 

@@ -87,9 +87,9 @@ get_ip_address = client.GetIpAddress()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `asn` | `str` | No |  |
-| `isp` | `str` | No |  |
-| `organization` | `str` | No |  |
+| `asn` | `str` | No | Autonomous System Number |
+| `isp` | `str` | No | Internet Service Provider |
+| `organization` | `str` | No | Organization owning the IP range |
 
 ### Operations
 

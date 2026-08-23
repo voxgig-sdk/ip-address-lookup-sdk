@@ -92,9 +92,9 @@ $get_ip_address = $client->GetIpAddress();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `asn` | `string` | No |  |
-| `isp` | `string` | No |  |
-| `organization` | `string` | No |  |
+| `asn` | `string` | No | Autonomous System Number |
+| `isp` | `string` | No | Internet Service Provider |
+| `organization` | `string` | No | Organization owning the IP range |
 
 ### Operations
 

@@ -98,9 +98,9 @@ fmt.Println(getIpAddress.GetName()) // "get_ip_address"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `asn` | `string` | No |  |
-| `isp` | `string` | No |  |
-| `organization` | `string` | No |  |
+| `asn` | `string` | No | Autonomous System Number |
+| `isp` | `string` | No | Internet Service Provider |
+| `organization` | `string` | No | Organization owning the IP range |
 
 ### Operations
 

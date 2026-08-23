@@ -93,9 +93,9 @@ get_ip_address = client.GetIpAddress
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `asn` | `String` | No |  |
-| `isp` | `String` | No |  |
-| `organization` | `String` | No |  |
+| `asn` | `String` | No | Autonomous System Number |
+| `isp` | `String` | No | Internet Service Provider |
+| `organization` | `String` | No | Organization owning the IP range |
 
 ### Operations
 

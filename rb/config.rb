@@ -19,6 +19,9 @@ module IpAddressLookupConfig
     {
       "main" => {
         "name" => "IpAddressLookup",
+        "slug" => "ip-address-lookup",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -41,14 +44,17 @@ module IpAddressLookupConfig
           "fields" => [
             {
               "name" => "asn",
+              "short" => "Autonomous System Number",
               "type" => "`$STRING`",
             },
             {
               "name" => "isp",
+              "short" => "Internet Service Provider",
               "type" => "`$STRING`",
             },
             {
               "name" => "organization",
+              "short" => "Organization owning the IP range",
               "type" => "`$STRING`",
             },
           ],

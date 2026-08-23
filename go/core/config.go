@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "IpAddressLookup",
+			"slug": "ip-address-lookup",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,14 +36,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "asn",
+						"short": "Autonomous System Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "isp",
+						"short": "Internet Service Provider",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "organization",
+						"short": "Organization owning the IP range",
 						"type": "`$STRING`",
 					},
 				},

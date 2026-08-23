@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'IpAddressLookup',
+        slug: "ip-address-lookup",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,14 +67,17 @@ class Config {
       "fields": [
         {
           "name": "asn",
+          "short": "Autonomous System Number",
           "type": "`$STRING`"
         },
         {
           "name": "isp",
+          "short": "Internet Service Provider",
           "type": "`$STRING`"
         },
         {
           "name": "organization",
+          "short": "Organization owning the IP range",
           "type": "`$STRING`"
         }
       ],

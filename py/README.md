@@ -241,9 +241,9 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `asn` |  |
-| `isp` |  |
-| `organization` |  |
+| `asn` | Autonomous System Number |
+| `isp` | Internet Service Provider |
+| `organization` | Organization owning the IP range |
 
 Operations: Load.
 
@@ -268,9 +268,9 @@ Create an instance: `get_ip_address = client.GetIpAddress()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `asn` | `str` |  |
-| `isp` | `str` |  |
-| `organization` | `str` |  |
+| `asn` | `str` | Autonomous System Number |
+| `isp` | `str` | Internet Service Provider |
+| `organization` | `str` | Organization owning the IP range |
 
 #### Example: Load
 

@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "IpAddressLookup",
+            "slug": "ip-address-lookup",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,14 +53,17 @@ def make_config():
         "fields": [
           {
             "name": "asn",
+            "short": "Autonomous System Number",
             "type": "`$STRING`",
           },
           {
             "name": "isp",
+            "short": "Internet Service Provider",
             "type": "`$STRING`",
           },
           {
             "name": "organization",
+            "short": "Organization owning the IP range",
             "type": "`$STRING`",
           },
         ],

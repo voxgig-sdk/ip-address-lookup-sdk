@@ -235,9 +235,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `asn` |  |
-| `isp` |  |
-| `organization` |  |
+| `asn` | Autonomous System Number |
+| `isp` | Internet Service Provider |
+| `organization` | Organization owning the IP range |
 
 Operations: Load.
 
@@ -262,9 +262,9 @@ Create an instance: `get_ip_address = client.GetIpAddress`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `asn` | `String` |  |
-| `isp` | `String` |  |
-| `organization` | `String` |  |
+| `asn` | `String` | Autonomous System Number |
+| `isp` | `String` | Internet Service Provider |
+| `organization` | `String` | Organization owning the IP range |
 
 #### Example: Load
 

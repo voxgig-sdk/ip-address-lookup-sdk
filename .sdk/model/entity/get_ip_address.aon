@@ -8,16 +8,19 @@ main: kit: entity: get_ip_address: {
     {
       name: "asn"
       req: false
+      short: "Autonomous System Number"
       type: "`$STRING`"
     }
     {
       name: "isp"
       req: false
+      short: "Internet Service Provider"
       type: "`$STRING`"
     }
     {
       name: "organization"
       req: false
+      short: "Organization owning the IP range"
       type: "`$STRING`"
     }
   ]

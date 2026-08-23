@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -285,9 +285,9 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `asn` |  |
-| `isp` |  |
-| `organization` |  |
+| `asn` | Autonomous System Number |
+| `isp` | Internet Service Provider |
+| `organization` | Organization owning the IP range |
 
 Operations: load.
 
@@ -312,9 +312,9 @@ Create an instance: `const get_ip_address = client.GetIpAddress()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `asn` | `string` |  |
-| `isp` | `string` |  |
-| `organization` | `string` |  |
+| `asn` | `string` | Autonomous System Number |
+| `isp` | `string` | Internet Service Provider |
+| `organization` | `string` | Organization owning the IP range |
 
 #### Example: Load
 
