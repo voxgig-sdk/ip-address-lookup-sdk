@@ -28,6 +28,7 @@ module IpAddressLookupConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {

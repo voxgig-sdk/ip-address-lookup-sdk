@@ -42,6 +42,7 @@ class IpAddressLookupConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
