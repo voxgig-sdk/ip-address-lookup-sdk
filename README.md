@@ -105,7 +105,7 @@ local result, err = client:GetIpAddress():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases) |
+| TypeScript | `@voxgig-sdk/ip-address-lookup-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases) |
 | Python | `voxgig-sdk-ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases) |
 | PHP | `voxgig-sdk/ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/ip-address-lookup-sdk/go` | `go get github.com/voxgig-sdk/ip-address-lookup-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:GetIpAddress():load()
 ### TypeScript
 
 ```ts
-import { IpAddressLookupSDK } from '@voxgig-sdk/ip-address-lookup'
+import { IpAddressLookupSDK } from '@voxgig-sdk/ip-address-lookup-sdk'
 
 const client = new IpAddressLookupSDK()
 
