@@ -29,5 +29,91 @@
         "organization": "s7a"
       }
     }
+  },
+  "requests": {
+    "GET /": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getIpAddress",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "example1": {
+                    "summary": "Example IP lookup response",
+                    "value": {
+                      "ip": "203.0.113.42",
+                      "network": {
+                        "asn": "AS15169",
+                        "isp": "Google Cloud",
+                        "organization": "Google LLC"
+                      }
+                    }
+                  }
+                },
+                "schema": {
+                  "properties": {
+                    "ip": {
+                      "description": "The public IP address of the client",
+                      "example": "203.0.113.42",
+                      "type": "string"
+                    },
+                    "network": {
+                      "description": "Network information associated with the IP address",
+                      "properties": {
+                        "asn": {
+                          "description": "Autonomous System Number",
+                          "example": "AS15169",
+                          "type": "string"
+                        },
+                        "isp": {
+                          "description": "Internet Service Provider",
+                          "example": "Google Cloud",
+                          "type": "string"
+                        },
+                        "organization": {
+                          "description": "Organization owning the IP range",
+                          "example": "Google LLC",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "example": "203.0.113.42",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successful response with IP address and network information"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "example": "Unable to determine IP address",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

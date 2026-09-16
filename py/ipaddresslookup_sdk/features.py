@@ -1,12 +1,18 @@
 # IpAddressLookup SDK feature factory
 
 from ipaddresslookup_sdk.feature.base_feature import IpAddressLookupBaseFeature
+from ipaddresslookup_sdk.feature.ratelimit_feature import IpAddressLookupRatelimitFeature
+from ipaddresslookup_sdk.feature.retry_feature import IpAddressLookupRetryFeature
 from ipaddresslookup_sdk.feature.test_feature import IpAddressLookupTestFeature
+from ipaddresslookup_sdk.feature.timeout_feature import IpAddressLookupTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: IpAddressLookupBaseFeature(),
+    "ratelimit": lambda: IpAddressLookupRatelimitFeature(),
+    "retry": lambda: IpAddressLookupRetryFeature(),
     "test": lambda: IpAddressLookupTestFeature(),
+    "timeout": lambda: IpAddressLookupTimeoutFeature(),
 }
 
 
