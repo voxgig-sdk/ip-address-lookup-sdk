@@ -105,12 +105,12 @@ local result, err = client:GetIpAddress():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/ip-address-lookup-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases) |
-| Python | `voxgig-sdk-ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases) |
-| PHP | `voxgig-sdk/ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases) |
+| TypeScript | `@voxgig-sdk/ip-address-lookup-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/tags) |
+| Python | `voxgig-sdk-ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/tags) |
+| PHP | `voxgig-sdk/ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/ip-address-lookup-sdk/go` | `go get github.com/voxgig-sdk/ip-address-lookup-sdk/go@latest` |
-| Ruby | `voxgig-sdk-ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases) |
-| Lua | `voxgig-sdk-ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/releases) |
+| Ruby | `voxgig-sdk-ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/tags) |
+| Lua | `voxgig-sdk-ip-address-lookup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/ip-address-lookup-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/ip-address-lookup-sdk/go-cli` | `go install github.com/voxgig-sdk/ip-address-lookup-sdk/go-cli/cmd/ip-address-lookup@latest` |
 | Go MCP server | `github.com/voxgig-sdk/ip-address-lookup-sdk/go-mcp` | `go get github.com/voxgig-sdk/ip-address-lookup-sdk/go-mcp@latest` |
 
