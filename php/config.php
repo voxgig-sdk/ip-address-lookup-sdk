@@ -113,18 +113,21 @@ class IpAddressLookupConfig
           'fields' => [
             [
               'name' => 'asn',
-              'short' => 'Autonomous System Number',
+              'title' => 'Asn',
               'type' => '`$STRING`',
+              'short' => 'Autonomous System Number',
             ],
             [
               'name' => 'isp',
-              'short' => 'Internet Service Provider',
+              'title' => 'Isp',
               'type' => '`$STRING`',
+              'short' => 'Internet Service Provider',
             ],
             [
               'name' => 'organization',
-              'short' => 'Organization owning the IP range',
+              'title' => 'Organization',
               'type' => '`$STRING`',
+              'short' => 'Organization owning the IP range',
             ],
           ],
           'name' => 'get_ip_address',
@@ -134,17 +137,18 @@ class IpAddressLookupConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/',
                   'segments' => [],
-                  'select' => [],
+                  'parts' => [],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.network`',
                   ],
-                  'parts' => [],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],

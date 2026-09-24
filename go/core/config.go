@@ -91,18 +91,21 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "asn",
-						"short": "Autonomous System Number",
+						"title": "Asn",
 						"type": "`$STRING`",
+						"short": "Autonomous System Number",
 					},
 					map[string]any{
 						"name": "isp",
-						"short": "Internet Service Provider",
+						"title": "Isp",
 						"type": "`$STRING`",
+						"short": "Internet Service Provider",
 					},
 					map[string]any{
 						"name": "organization",
-						"short": "Organization owning the IP range",
+						"title": "Organization",
 						"type": "`$STRING`",
+						"short": "Organization owning the IP range",
 					},
 				},
 				"name": "get_ip_address",
@@ -112,17 +115,18 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/",
 								"segments": []any{},
-								"select": map[string]any{},
+								"parts": []any{},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.network`",
 								},
-								"parts": []any{},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

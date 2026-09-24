@@ -1,0 +1,55 @@
+# Entity: get_ip_address
+
+main: kit: entity: get_ip_address: {
+
+  alias: field: {}
+
+  fields: {
+    asn: {
+      h: "Asn"
+      n: "asn"
+      r: false
+      sh: "Autonomous System Number"
+      t: "`$STRING`"
+    }
+    isp: {
+      h: "Isp"
+      n: "isp"
+      r: false
+      sh: "Internet Service Provider"
+      t: "`$STRING`"
+    }
+    organization: {
+      h: "Organization"
+      n: "organization"
+      r: false
+      sh: "Organization owning the IP range"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "get_ip_address"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/"
+          t: {
+            req: "`reqdata`"
+            res: "`body.network`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
